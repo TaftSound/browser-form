@@ -104,10 +104,11 @@ svg {
 }
 .error-container {
   visibility: hidden;
+  opacity: 0%;
   user-select: none;
   position: absolute;
   left: 15px;
-  right: -7.5px;
+  right: -6px;
   top: 100%;
   height: max-content;
   display: flex;
@@ -116,6 +117,8 @@ svg {
   padding: 12.5px 0px;
   gap: 2px;
   z-index: 2;
+  transition: visibility 0s 0.5s,
+              opacity 0.5s;
 }
 .bubble-pointer {
   background-color: white;
@@ -125,7 +128,7 @@ svg {
   border-bottom-color: transparent;
   width: 10px;
   height: 10px;
-  right: 17.5px;
+  right: 16px;
   top: 7.5px;
   position: absolute;
   transform: rotate(45deg);
@@ -142,6 +145,17 @@ svg {
   text-align: center;
 }
 .error-icon {
-  fill: orange;
   visibility: hidden;
+  opacity: 0%;
+  
+}
+.error-path {
+  fill: orange;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 100%;
+  transition: visibility 0s 0.0s,
+              opacity 0.3s;
 }

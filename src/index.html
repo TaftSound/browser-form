@@ -9,13 +9,13 @@
 <body>
   <div class="form-container">
     <div class="overlay"></div>
-    <form action="/http://httpbin.org/#/" method="post">
+    <form action="/http://httpbin.org/#/" method="post" novalidate>
       <div class="form-grid">
         <label for="email">User Email:</label>
         <div class="input-container">
-          <input type="email" id="email" name="Email" required>
-          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-            <path class="error-icon" fill="currentColor" d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z" />
+          <input type="email" id="email" name="Email" pattern=".+@.+\.[a-z]{2,9}" required>
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="error-icon">
+            <path class="error-path" fill="currentColor" d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z" />
           </svg>
           <div class="error-container">
             <div class="bubble-pointer"></div>
@@ -274,8 +274,8 @@
             <option value="Zambia">Zambia</option>
             <option value="Zimbabwe">Zimbabwe</option>
           </select>
-          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-            <path class="error-icon" fill="currentColor" d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z" />
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="error-icon">
+            <path class="error-path" fill="currentColor" d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z" />
           </svg>
           <div class="error-container">
             <div class="bubble-pointer"></div>
@@ -285,8 +285,8 @@
         <label for="zip-code">ZIP Code:</label>
         <div class="input-container">
           <input type="text" id="zip-code" name="ZIP Code" pattern="^\d{5}$|^\d{5}-\d{4}$" required>
-          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-            <path class="error-icon" fill="currentColor" d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z" />
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="error-icon">
+            <path class="error-path" fill="currentColor" d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z" />
           </svg>
           <div class="error-container">
             <div class="bubble-pointer"></div>
@@ -296,8 +296,8 @@
         <label for="password">Password:</label>
         <div class="input-container">
           <input type="password" id="password" name="Password" pattern="" required>
-          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-            <path class="error-icon" fill="currentColor" d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z" />
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="error-icon">
+            <path class="error-path" fill="currentColor" d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z" />
           </svg>
           <div class="error-container">
             <div class="bubble-pointer"></div>
@@ -307,8 +307,8 @@
         <label for="confirm-password">Confirm Password:</label>
         <div class="input-container">
           <input type="password" id="confirm-password" name="Confirm Password" pattern="" required>
-          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-            <path class="error-icon" fill="currentColor" d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z" />
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24" class="error-icon">
+            <path class="error-path" fill="currentColor" d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z" />
           </svg>
           <div class="error-container">
             <div class="bubble-pointer"></div>

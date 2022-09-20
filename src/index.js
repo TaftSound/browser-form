@@ -15,11 +15,36 @@ const checkValidityState = (inputElement, inputName) => {
   }
   return alertMessage
 }
+const checkPasswordValidity = (inputElement) => {
+  const validityState = inputElement.validity
+  if (validityState.valueMissing) {
+    return 'This field is required'
+  } else if (validityState.tooShort) {
+    return 'Password must be at least 8 characters'
+  } else if (validityState.patternMismatch) {
+    return 'Password must contain at least one special character and one capital letter'
+  } else {
+    const password = inputElement.value
+    confirmPasswordInput.setAttribute('pattern', password)
+    return false
+  }
+}
+const confirmPassword = (inputElement) => {
+  const validityState = inputElement.validity
+  if (validityState.patternMismatch) {
+    return 'Password does not match'
+  } else { return false }
+}
 
 const validateInput = (inputElement, elementName) => {
   const alertIcon = inputElement.nextElementSibling
   alertIcon.classList.remove('visible')
-  const alertMessage = checkValidityState(inputElement, elementName)
+  let alertMessage
+  if (elementName === 'password') {
+    alertMessage = checkPasswordValidity(inputElement)
+  } else if (elementName === 'confirm') {
+    alertMessage = confirmPassword(inputElement)
+  } else { alertMessage = checkValidityState(inputElement, elementName) }
   if (!alertMessage) { return }
   const alertContainer = alertIcon.nextElementSibling
   alertContainer.lastElementChild.textContent = alertMessage
@@ -27,8 +52,9 @@ const validateInput = (inputElement, elementName) => {
   alertContainer.classList.toggle('visible')
   setTimeout(() => {
     alertContainer.classList.toggle('visible')
-  }, 2250)
+  }, 2750)
 }
+
 emailInput.onblur = () => {
   validateInput(emailInput, 'email')
 }
@@ -37,4 +63,10 @@ countryInput.onblur = () => {
 }
 zipInput.onblur = () => {
   validateInput(zipInput, 'zip code')
+}
+passwordInput.onblur = () => {
+  validateInput(passwordInput, 'password')
+}
+confirmPasswordInput.onblur = () => {
+  validateInput(confirmPasswordInput, 'confirm')
 }

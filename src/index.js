@@ -4,6 +4,8 @@ const countryInput = document.getElementById('country')
 const zipInput = document.getElementById('zip-code')
 const passwordInput = document.getElementById('password')
 const confirmPasswordInput = document.getElementById('confirm-password')
+const submitButton = document.getElementById('submit-button')
+let formIncomplete = true
 
 const checkValidityState = (inputElement, inputName) => {
   const validityState = inputElement.validity
@@ -46,6 +48,7 @@ const validateInput = (inputElement, elementName) => {
     alertMessage = confirmPassword(inputElement)
   } else { alertMessage = checkValidityState(inputElement, elementName) }
   if (!alertMessage) { return }
+  formIncomplete = true
   const alertContainer = alertIcon.nextElementSibling
   alertContainer.lastElementChild.textContent = alertMessage
   alertIcon.classList.add('visible')
@@ -69,4 +72,15 @@ passwordInput.onblur = () => {
 }
 confirmPasswordInput.onblur = () => {
   validateInput(confirmPasswordInput, 'confirm')
+}
+submitButton.onclick = (event) => {
+  formIncomplete = false
+  validateInput(emailInput, 'email')
+  validateInput(countryInput)
+  validateInput(zipInput, 'zip code')
+  validateInput(passwordInput, 'password')
+  validateInput(confirmPasswordInput, 'confirm')
+  if (formIncomplete) {
+    event.preventDefault()
+  } else { alert('Form Submitted!') }
 }
